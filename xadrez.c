@@ -1,32 +1,49 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main(){
+    int casaRainha, casaBispo, casaTorre, peca, qdd;
+    char direcao[20];
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    printf("### X A D R E Z ###\n");
+    printf("Qual peça você quer mover?\n");
+    printf("1. Torre\n");
+    printf("2. Bispo\n");
+    printf("3. Rainha\n");
+    printf("\nDigite sua opção:  ");
+    scanf("%d", &peca);
+    printf("Quantas casas?  ");
+    scanf("%d", &qdd);
+    printf("Para qual direção (para espaço utilize _ )?  ");
+    scanf("%s", &direcao);
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    int i = 0;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    switch (peca){
+    case 1:
+        do {
+        printf("%s\n", direcao); //Direção do movimento;
+        i++; // incremento
+        } while (i < qdd); //vai rodar até ser verdadeira.
+        printf("A Torre andou %d para %s\n", qdd, direcao);
+        break;
+    case 2:
+        for (i; i < qdd; i++){
+        printf("%s\n", direcao); //Direção do movimento;
+        }
+        printf("O Bispo andou %d para %s\n", qdd, direcao);
+        break;
+    case 3:
+        while (i < qdd){
+        printf("%s\n", direcao); //Direção do movimento;
+        i++; // incremento
+        }
+        printf("A Rainha andou %d para %s\n", qdd, direcao);
+        break;
+    
+    default:
+        printf("Opção Invalida");
+        break;
+    }
 
     return 0;
 }
