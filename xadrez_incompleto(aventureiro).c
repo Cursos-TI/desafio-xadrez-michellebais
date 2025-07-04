@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-//criando o Looping mover
-void mover(int qdd, char direcao[20]){
-    if (qdd > 0){
-        printf("%s\n", direcao);
-        mover(qdd - 1, direcao);
-    }
-}
-
 int main(){
     int casaRainha, casaBispo, casaTorre, peca, qdd, qdd2;
     char direcao[20], direcao2[20];
@@ -32,19 +24,27 @@ int main(){
     case 1:
         printf("Para qual direção (acima, abaixo, direita, esquerda)?  ");
         scanf("%s", direcao);
-        mover(qdd, direcao);
+        do {
+        printf("%s\n", direcao); //Direção do movimento;
+        i++; // incremento
+        } while (i < qdd); //vai rodar até ser verdadeira.
         printf("A Torre andou %d para %s\n", qdd, direcao);
         break;
     case 2:
         printf("Para qual direção (acima-dir, acima-esq, abaixo-dir, abaixo-esq)?  ");
         scanf("%s", direcao);
-        mover(qdd, direcao);
+        for (i; i < qdd; i++){
+        printf("%s\n", direcao); //Direção do movimento;
+        }
         printf("O Bispo andou %d para %s\n", qdd, direcao);
         break;
     case 3:
         printf("Para qual direção (acima, abaixo, direita, esquerda,acima-dir, acima-esq, abaixo-dir, abaixo-esq)?  ");
         scanf("%s", direcao);
-        mover(qdd, direcao);
+        while (i < qdd){
+        printf("%s\n", direcao); //Direção do movimento;
+        i++; // incremento
+        }
         printf("A Rainha andou %d para %s\n", qdd, direcao);
         break;
     case 4:
